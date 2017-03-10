@@ -54,7 +54,7 @@ func masterTask() {
 	for _, f := range allFiles {
 		inputChan <- f
 	}
-	left := expected * 3 + 1
+	left := expected * 3
 
 Main100:
 	for left > 0 {
