@@ -19,7 +19,8 @@ var cdn_ip string
 
 const (
 	default_version    = "1.0.0"
-	deploy_target_base = "H:/GDWorks/test/g/v1/gevents/"
+	//deploy_target_base = "H:/GDWorks/test/g/v1/gevents/"
+	deploy_target_base = `I:\JokerRush\AppX\gevents\`
 )
 
 func conf_getTargetVersionFile() string {
@@ -88,8 +89,9 @@ func doWriteMyDistr() {
 
 func runEvaluate(taskName string, proc func()) {
 	start := time.Now()
-	defer fmt.Printf("%v runs for %v\n", taskName, time.Since(start))
+	//defer fmt.Printf("%v runs for %v\n", taskName, time.Since(start))
 	proc()
+	fmt.Printf("%v runs for %v\n", taskName, time.Since(start))
 }
 
 type TaskCounter struct {
