@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "fmt"
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -15,7 +15,12 @@ func doOneCheck(p interface{}) interface{} {
 	}
 	ext := filepath.Ext(fi.Name())
 	if `.lua` == strings.ToLower(ext) {
-		doXXTeaToUno(ptr.abs_path, ptr.abs_path)
+		pn := strings.TrimSuffix(fi.Name(), ext)
+		if !isNameExcepted(pn) {
+			doXXTeaToUno(ptr.abs_path, ptr.abs_path)
+		} else {
+			fmt.Printf("Except for <%v>\n", pn)
+		}
 	}
 	return &fileUnoOut{ptr.abs_path, ptr.relpath}
 }
