@@ -18,7 +18,7 @@ var input_folder string
 var cdn_ip string
 
 const (
-	default_version    = "1.0.0"
+	default_version = "1.0.0"
 	//deploy_target_base = "H:/GDWorks/test/g/v1/gevents/"
 	deploy_target_base = `I:\JokerRush\AppX\gevents\`
 )
@@ -70,7 +70,7 @@ func (this Distr) MarshalJSON() ([]byte, error) {
 func doWriteMyDistr() {
 	d := Distr{
 		version,
-		"192.168.18.1:7991",
+		"192.168.18.1:12000",
 		1048,
 		"1.0.X",
 	}
